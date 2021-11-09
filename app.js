@@ -4,6 +4,7 @@ const app = express()
 const router = require('express').Router();
 
 app.get('/', (req, res) => res.redirect('./bookmarks'))
+app.use(express.urlencoded({extended: false}))
 
 app.get('/bookmarks', async(req, res, next) => {
 	try{
@@ -34,6 +35,7 @@ app.get('/bookmarks', async(req, res, next) => {
 })
 app.get('/bookmark/:category', async(req, res, next) => {
 	try {
+		const category = 
 		res.send(`
 			<html>
 				<body>
